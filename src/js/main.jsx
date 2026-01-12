@@ -9,10 +9,19 @@ import "bootstrap"
 import '../styles/index.css'
 
 // components
-import Home from './components/Home';
+import Contador from './components/Contador';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+//FontAwesome
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+let segundos = 0;
+
+setInterval(() => {
+  segundos++;
+
+  ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+      <Contador segundos={segundos} />
+    </React.StrictMode>
+  );
+}, 1000);
